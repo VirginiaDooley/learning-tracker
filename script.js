@@ -45,6 +45,12 @@ function addTask(taskName) {
     renderTasks();
 }
 
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    renderTasks();
+}
+
 function toggleTaskCompletion(index) {
     tasks[index].completed = !tasks[index].completed;
     localStorage.setItem('tasks', JSON.stringify(tasks));
