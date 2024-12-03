@@ -44,6 +44,13 @@ function addTask(taskName) {
     localStorage.setItem('tasks', JSON.stringify(tasks));
     renderTasks();
 }
+
+function toggleTaskCompletion(index) {
+    tasks[index].completed = !tasks[index].completed;
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    renderTasks();
+}
+
 addTaskButton.addEventListener('click', () => {
     const taskName = taskInput.value.trim();
     if (taskName) {
