@@ -23,6 +23,7 @@ function renderTasks() {
         
         if (task.completed) {
             li.classList.add('completed');
+            li.style.animation = 'celebrate 0.5s ease';
         }
 
         li.innerHTML = `
