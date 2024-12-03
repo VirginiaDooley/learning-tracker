@@ -3,7 +3,17 @@ const addTaskButton = document.getElementById('addTaskButton');
 const taskList = document.getElementById('taskList');
 const progressBar = document.getElementById('progressBar');
 const progressText = document.getElementById('progressText');
+
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+function updateProgressBar() {
+    const totalTasks = tasks.length;
+    const completedTasks = tasks.filter(task => task.completed).length;
+    const progress = totalTasks === 0 ? 0 : (completedTasks / totalTasks) * 100;
+
+    progressBar.style.width = `${progress}%`;
+    progressText.textContent = `${Math.round(progress)}% completed`;
+}
 
 function renderTasks() {
     taskList.innerHTML = ''; 
@@ -24,6 +34,8 @@ function renderTasks() {
         `;
         taskList.appendChild(li);
     });
+
+	updateProgressBar();
 }
 
 
