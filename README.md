@@ -41,6 +41,3 @@ The tasks are saved using localStorage, so they will persist even after refreshi
 - Advanced Progress Tracking: Track progress over time, with goals and milestones.
 - Task Notes: Allow users to add detailed notes for each task.
 - Notifications: Set reminders for due tasks.
-
-### Contributing
-If you'd like to contribute to this project, feel free to fork the repository, create a branch, and submit a pull request. Contributions, suggestions, and issues are always welcome!
